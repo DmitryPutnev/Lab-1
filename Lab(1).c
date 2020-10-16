@@ -2,7 +2,13 @@
 #include <stdio.h>
 int main()
 {
-	int i = 0, k = 1, N;
+	int i = 0, k = 1, N, a;
+	printf("Enter a number, the degree of which you need \n");
+	while (scanf("%d", &a) != 1)
+	{
+		printf("Incorrect symbol. Please enter integer nuber \n");
+		while (getchar() != '\n');
+	}
 	printf("Input N ");
 	while (scanf("%d", &N) != 1)
 	{
@@ -18,11 +24,11 @@ int main()
 
 		while (N > k)
 		{
-			k = k * 2;
+			k = k * a;
 			i++;
 		}
-		printf("%d <= %d <= %d\n", k / 2, N, k);
-		if (k - N < N - k / 2)
+		printf("%d <= %d <= %d\n", k / a, N, k);
+		if (k - N < N - k / a)
 		{
 			printf("Result (%d)", i);
 		}
